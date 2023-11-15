@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+header {
+  display: flex;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+.add {
+  font-size: 38px;
+  margin-left: auto;
+}
+
+button {
+  all: unset;
+  font-weight: bold;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+main {
+  background: white;
+  padding: 8px;
+}
+
+.container {
+  background: #9cf;
+  width: 90%;
+  margin: 16px auto;
+  padding: 8px;
+}
+
+.hiden {
+  display: none;
+}
