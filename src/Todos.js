@@ -83,7 +83,7 @@ const Todos = (props) => {
             {displayTime()}
             <p className="title">{props.todo.title}</p>
           </span>
-          <img src={`${process.env.PUBLIC_URL}/images/edit.jpg`} alt="Edit" className="editbtn" onClick={handleEditClick} />
+          <img src={`${process.env.PUBLIC_URL}/images/edit.jpeg`} alt="Edit" className="editbtn" onClick={handleEditClick} />
           <button onClick={handleDeleteClick}>×</button>
         </li>
       </ul>
