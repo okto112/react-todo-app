@@ -48,17 +48,26 @@
 input[type="date"], input[type="time"] {
   font-size: 18px;
   width: 150px;
+  padding: 4px;
 }
 
-input {
-  font-size: 24px;
-  padding: 4px;
+input[type=date]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  padding-left: 130px;
+  cursor: pointer;
+}
+
+input[type=time]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  padding-left: 120px;
   cursor: pointer;
 }
 
 .overlay input[type="text"] {
+  font-size: 24px;
   border: none;
   width: 100%;
+  padding: 4px;
 }
 
 .overlay ul p {
@@ -129,6 +138,11 @@ input {
   padding: 0 6px;
   line-height: 1rem;
   border-bottom: solid 2px #ccc;
+  cursor: pointer;
+}
+
+.btnarea button:hover {
+  opacity: .5;
 }
 
 .hiden {
