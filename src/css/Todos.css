@@ -30,6 +30,7 @@ li {
 li input {
   margin: auto 10px;
   transform: scale(1.4);
+  cursor: pointer;
 }
 
 li input:checked+span {
@@ -53,6 +54,10 @@ li button {
   cursor: pointer;
 }
 
+li button:hover {
+  opacity: .6;
+}
+
 .time {
   margin: auto 4px;
 }
@@ -73,6 +78,10 @@ li button {
   width: 20px;
   margin: auto 10px auto auto;
   cursor: pointer;
+}
+
+.editbtn:hover {
+  opacity: .6;
 }
 
 @media (max-width:600px) {
