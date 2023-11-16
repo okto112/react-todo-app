@@ -50,7 +50,7 @@ li span p {
 li button {
   all: unset;
   font-size: 30px;
-  margin: auto 2px;
+  margin: 4px 2px 0;
   cursor: pointer;
 }
 
@@ -87,13 +87,13 @@ li button:hover {
 @media (max-width:600px) {
   h1 {
     margin-top: 4px;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   h2 {
     margin: 4px 0 0;
     width: 18%;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   ul {
@@ -105,12 +105,26 @@ li button:hover {
   }
 
   li input {
-    margin: auto 4px;
+    margin: auto 2px;
     transform: scale(1.0);
   }
 
+  li span p {
+    padding: 2px;
+  }
+
+  li button {
+    font-size: 20px;
+    margin: 2px 0 0;
+  }
+
   .time {
-    margin: auto 2px;
+    margin: auto 1px;
     font-size: 14px;
+  }
+
+  .editbtn {
+    width: 14px;
+    margin: auto 6px auto auto;
   }
 }

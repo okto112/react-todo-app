@@ -3,7 +3,7 @@
 header {
   display: flex;
   font-size: 24px;
-  line-height: 50px;
+  line-height: 40px;
 }
 
 .add {
@@ -36,4 +36,16 @@ main {
 
 .hiden {
   display: none;
+}
+
+@media (max-width:600px) {
+  header {
+    display: flex;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  button {
+    margin: 0 10px;
+  }
 }
