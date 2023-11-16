@@ -114,8 +114,8 @@ li button:hover {
   }
 
   li button {
-    font-size: 20px;
-    margin: 2px 0 0;
+    font-size: 26px;
+    margin: 6px 0 0;
   }
 
   .time {
@@ -124,7 +124,7 @@ li button:hover {
   }
 
   .editbtn {
-    width: 14px;
+    width: 18px;
     margin: auto 6px auto auto;
   }
 }

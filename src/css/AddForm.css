@@ -202,10 +202,10 @@ input[type=time]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-height:700px) {
+@media (max-height:600px) {
   .overlay {
     width: 80%;
-    margin: 30px auto;
+    margin: 2px auto;
     padding: 8px;
   }
 
