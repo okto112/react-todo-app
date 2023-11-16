@@ -219,6 +219,7 @@ input[type=time]::-webkit-calendar-picker-indicator {
   }
 
   .top h1 {
+    font-size: 18px;
     margin-top: 0;
   }
 
