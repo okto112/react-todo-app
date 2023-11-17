@@ -50,7 +50,7 @@ li span p {
 li button {
   all: unset;
   font-size: 30px;
-  margin: 4px 2px 0;
+  margin: auto 2px;
   cursor: pointer;
 }
 
@@ -86,7 +86,7 @@ li button:hover {
 
 @media (max-width:600px) {
   h1 {
-    margin-top: 4px;
+    margin-top: 8px;
     font-size: 18px;
   }
 
@@ -107,6 +107,7 @@ li button:hover {
   li input {
     margin: auto 2px;
     transform: scale(1.0);
+    height: 14px;
   }
 
   li span p {
@@ -115,7 +116,6 @@ li button:hover {
 
   li button {
     font-size: 26px;
-    margin: 0;
   }
 
   .time {

@@ -205,7 +205,7 @@ input[type=time]::-webkit-calendar-picker-indicator {
 @media (max-height:500px) {
   .overlay {
     width: 80%;
-    margin: 2px auto;
+    margin: 8px auto;
     padding: 8px;
   }
 
