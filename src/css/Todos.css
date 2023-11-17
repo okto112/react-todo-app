@@ -29,8 +29,6 @@ li {
 
 li input {
   margin: auto 10px;
-  transform: scale(1.4);
-  width: 2%;
   cursor: pointer;
 }
 
@@ -41,7 +39,7 @@ li input:checked+span {
 
 li span {
   display: flex;
-  margin: auto 0;
+  width: 100%;
 }
 
 li span p {
@@ -77,7 +75,7 @@ li button:hover {
 
 .editbtn {
   width: 20px;
-  margin: auto 10px auto auto;
+  margin: auto 10px auto 0;
   cursor: pointer;
 }
 
@@ -108,7 +106,6 @@ li button:hover {
   li input {
     margin: auto 2px;
     transform: scale(1.0);
-    width: 4%;
   }
 
   li span p {
