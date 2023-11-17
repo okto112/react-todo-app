@@ -72,6 +72,7 @@ li button:hover {
 .title {
   word-break: break-all;
   margin: 0 4px;
+  width: 100%;
 }
 
 .editbtn {
@@ -107,7 +108,6 @@ li button:hover {
   li input {
     margin: auto 2px;
     transform: scale(1.0);
-    height: 14px;
   }
 
   li span p {
