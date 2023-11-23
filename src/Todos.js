@@ -10,7 +10,7 @@ const Todos = (props) => {
   const handleDeleteClick = () => {
     props.onDeleteClick(props.todo.id);
   };
-  
+
   const handleEditClick = () => {
     props.handleEdit(props.todo.id);
   };
@@ -38,22 +38,21 @@ const Todos = (props) => {
           <h2>{props.todo.day.replace(/^0+/, '')}日</h2>
         </>
       );
-    } else if (
-      props.todo.year !== "" &&
-      !props.dateLists.some(dateLists => dateLists.day === props.todo.day)
+    }
+    else if (
+      props.todo.year !== ""
+      &&
+      props.dateLists.some(dateLists => dateLists.month === props.todo.month && dateLists.day === props.todo.day)
     ) {
+      props.dateSelect(props.todo.year, props.todo.month, props.todo.day);
+      return;
+    } else if (props.todo.year !== "") {
       props.dateSelect(props.todo.year, props.todo.month, props.todo.day);
       return (
         <>
           <h2>{props.todo.day.replace(/^0+/, '')}日</h2>
         </>
       );
-    } else if (
-      props.todo.year !== "" &&
-      !props.dateLists.some(dateLists => dateLists.day === props.todo.day)
-    ) {
-      props.dateSelect(props.todo.year, props.todo.month, props.todo.day);
-      return;
     }
   };
 
