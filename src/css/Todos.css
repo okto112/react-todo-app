@@ -30,6 +30,7 @@ li {
 li input {
   margin: auto 10px;
   transform: scale(1.4);
+  cursor: pointer;
 }
 
 li input:checked+span {
@@ -39,6 +40,7 @@ li input:checked+span {
 
 li span {
   display: flex;
+  width: 100%;
   margin: auto 0;
 }
 
@@ -51,6 +53,10 @@ li button {
   font-size: 30px;
   margin: auto 2px;
   cursor: pointer;
+}
+
+li button:hover {
+  opacity: .6;
 }
 
 .time {
@@ -71,20 +77,24 @@ li button {
 
 .editbtn {
   width: 20px;
-  margin: auto 10px auto auto;
+  margin: auto 10px auto 0;
   cursor: pointer;
+}
+
+.editbtn:hover {
+  opacity: .6;
 }
 
 @media (max-width:600px) {
   h1 {
-    margin-top: 4px;
-    font-size: 20px;
+    margin-top: 8px;
+    font-size: 18px;
   }
 
   h2 {
     margin: 4px 0 0;
     width: 18%;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   ul {
@@ -96,12 +106,25 @@ li button {
   }
 
   li input {
-    margin: auto 4px;
+    margin: auto 6px auto 0;
     transform: scale(1.0);
   }
 
+  li span p {
+    padding: 2px;
+  }
+
+  li button {
+    font-size: 26px;
+  }
+
   .time {
-    margin: auto 2px;
+    margin: auto 1px;
     font-size: 14px;
+  }
+
+  .editbtn {
+    width: 18px;
+    margin: auto 6px auto auto;
   }
 }

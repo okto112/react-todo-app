@@ -1,7 +1,7 @@
 import Todos from './Todos';
 import './css/App.css';
 import AddForm from './AddForm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import React from "react";
 
 
@@ -11,7 +11,7 @@ const App = () => {
   const [openForm, setOpenForm] = useState(false);
   const [editTodo, setEditTodo] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let saveTodos = [];
     if (localStorage.getItem('todos') === null) {
       saveTodos = [];
@@ -23,7 +23,20 @@ const App = () => {
 
   const updateTodos = (newTodos) => {
     for (let i = 0; i < newTodos.length; i++) {
-      if (newTodos[i].year !== "") {
+      if (newTodos[i].year === "") {
+        newTodos.sort((a, b) => a.id - b.id);
+        newTodos.sort((a, b) => a.minute - b.minute);
+        newTodos.sort((a, b) => a.hour - b.hour);
+      } else if (newTodos[i].year !== "" && newTodos[i].hour === "") {
+        newTodos.sort((a, b) => a.id - b.id);
+        newTodos.sort((a, b) => a.day - b.day);
+        newTodos.sort((a, b) => a.month - b.month);
+        newTodos.sort((a, b) => a.year - b.year);
+      } else if (newTodos[i].year === "" && newTodos[i].hour !== "") {
+        newTodos.sort((a, b) => a.id - b.id);
+        newTodos.sort((a, b) => a.minute - b.minute);
+        newTodos.sort((a, b) => a.hour - b.hour);
+      } else if (newTodos[i].year !== "" && newTodos[i].hour !== "") {
         newTodos.sort((a, b) => a.id - b.id);
         newTodos.sort((a, b) => a.minute - b.minute);
         newTodos.sort((a, b) => a.hour - b.hour);
@@ -36,6 +49,7 @@ const App = () => {
     setDateLists([]);
     setEditTodo([]);
     localStorage.setItem('todos', JSON.stringify(newTodos));
+    console.log(todos);
   };
 
   const handlePurgeClick = () => {
@@ -102,12 +116,12 @@ const App = () => {
     );
   });
 
-  const handleAddFormSubmit = (year, month, day, hour, minute, color, num,  title, editId) => {
+  const handleAddFormSubmit = (year, month, day, hour, minute, color, num, title, editId) => {
     let newTodos;
     if (editId !== "") {
       newTodos = todos.filter((todo) => {
         return todo.id !== editId;
-      });newTodos.push({
+      }); newTodos.push({
         id: editId,
         year: year,
         month: month,
@@ -119,7 +133,7 @@ const App = () => {
         title: title,
         isCompleted: false,
       });
-    }else {
+    } else {
       newTodos = [...todos];
       newTodos.push({
         id: Date.now(),
@@ -132,6 +146,7 @@ const App = () => {
         num: num,
         title: title,
         isCompleted: false,
+
       });
     }
     updateTodos(newTodos);
