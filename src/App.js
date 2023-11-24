@@ -22,34 +22,26 @@ const App = () => {
   }, []);
 
   const updateTodos = (newTodos) => {
-    for (let i = 0; i < newTodos.length; i++) {
-      if (newTodos[i].year === "") {
-        newTodos.sort((a, b) => a.id - b.id);
-        newTodos.sort((a, b) => a.minute - b.minute);
-        newTodos.sort((a, b) => a.hour - b.hour);
-      } else if (newTodos[i].year !== "" && newTodos[i].hour === "") {
-        newTodos.sort((a, b) => a.id - b.id);
-        newTodos.sort((a, b) => a.day - b.day);
-        newTodos.sort((a, b) => a.month - b.month);
-        newTodos.sort((a, b) => a.year - b.year);
-      } else if (newTodos[i].year === "" && newTodos[i].hour !== "") {
-        newTodos.sort((a, b) => a.id - b.id);
-        newTodos.sort((a, b) => a.minute - b.minute);
-        newTodos.sort((a, b) => a.hour - b.hour);
-      } else if (newTodos[i].year !== "" && newTodos[i].hour !== "") {
-        newTodos.sort((a, b) => a.id - b.id);
-        newTodos.sort((a, b) => a.minute - b.minute);
-        newTodos.sort((a, b) => a.hour - b.hour);
-        newTodos.sort((a, b) => a.day - b.day);
-        newTodos.sort((a, b) => a.month - b.month);
-        newTodos.sort((a, b) => a.year - b.year);
-      }
-    }
-    setTodos(newTodos);
+    const NullTodos = newTodos.filter((todo) => {
+      return todo.year === "";
+    });
+    const NotNullTodos = newTodos.filter((todo) => {
+      return todo.year !== "";
+    });
+    NullTodos.sort((a, b) => a.id - b.id);
+    NullTodos.sort((a, b) => a.minute - b.minute);
+    NullTodos.sort((a, b) => a.hour - b.hour);
+    NotNullTodos.sort((a, b) => a.id - b.id);
+    NotNullTodos.sort((a, b) => a.minute - b.minute);
+    NotNullTodos.sort((a, b) => a.hour - b.hour);
+    NotNullTodos.sort((a, b) => a.day - b.day);
+    NotNullTodos.sort((a, b) => a.month - b.month);
+    NotNullTodos.sort((a, b) => a.year - b.year);
+    let AllTodos = [...NullTodos,...NotNullTodos];
+    setTodos(AllTodos);
     setDateLists([]);
     setEditTodo([]);
-    localStorage.setItem('todos', JSON.stringify(newTodos));
-    console.log(todos);
+    localStorage.setItem('todos', JSON.stringify(AllTodos));
   };
 
   const handlePurgeClick = () => {
@@ -121,7 +113,8 @@ const App = () => {
     if (editId !== "") {
       newTodos = todos.filter((todo) => {
         return todo.id !== editId;
-      }); newTodos.push({
+      });
+      newTodos.push({
         id: editId,
         year: year,
         month: month,
@@ -146,7 +139,6 @@ const App = () => {
         num: num,
         title: title,
         isCompleted: false,
-
       });
     }
     updateTodos(newTodos);
