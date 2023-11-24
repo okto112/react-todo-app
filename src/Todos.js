@@ -38,11 +38,25 @@ const Todos = (props) => {
           <h2>{props.todo.day.replace(/^0+/, '')}日</h2>
         </>
       );
-    }
-    else if (
-      props.todo.year !== ""
-      &&
-      props.dateLists.some(dateLists => dateLists.month === props.todo.month && dateLists.day === props.todo.day)
+    } else if (
+      props.todo.year !== "" &&
+      !props.dateLists.some(dateLists =>
+        dateLists.year === props.todo.year &&
+        dateLists.month === props.todo.month)
+    ) {
+      props.dateSelect(props.todo.year, props.todo.month, props.todo.day);
+      return (
+        <>
+          <h1>{props.todo.year}年{props.todo.month.replace(/^0+/, '')}月</h1>
+          <h2>{props.todo.day.replace(/^0+/, '')}日</h2>
+        </>
+      );
+    } else if (
+      props.todo.year !== "" &&
+      props.dateLists.some(dateLists =>
+        dateLists.year === props.todo.year &&
+        dateLists.month === props.todo.month &&
+        dateLists.day === props.todo.day)
     ) {
       props.dateSelect(props.todo.year, props.todo.month, props.todo.day);
       return;
